@@ -1,0 +1,26 @@
+<section class="details">
+    <div class="item">   
+        <div>Nome</div>
+        <div>
+            <input 
+                name="name"
+                type="text"
+                value="{{ chef.name }}"
+                required
+            >
+        </div>
+    </div>
+
+    <div class="item">   
+        <div>Avatar</div>
+        <div>
+            <input 
+                name="avatar_url"
+                type="url"
+                placeholder="http://"
+                value="{{ chef.avatar_url }}"
+                required
+            >
+        </div>
+    </div>
+</section>

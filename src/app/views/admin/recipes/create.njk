@@ -1,0 +1,28 @@
+{% extends "admin/layout.njk" %}
+
+{% block head %}
+    <title>Foodfy - Nova receita</title>
+{% endblock head %}
+
+{% block links %}
+<a class="active"href="/admin/recipes">Receitas</a>
+<a href="/admin/chefs">Chefs</a>
+{% endblock links %}
+
+{% block content %}
+<div id="wrapper">
+    <form id="form-save" action="/admin/recipes" method="post">
+        <div class="recipe-header">
+            <h2>Nova receita</h2>
+            <div>
+                <button form="form-save" type="submit">Salvar receita</button>
+            </div>
+        </div>
+
+        {% include "admin/recipes/fields.njk" %}
+    </form>
+</div>
+ 
+{% include "fieldMaker.njk" %}
+
+{% endblock content %}

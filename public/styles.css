@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --button-color: #6558C3;
+    --text-secondary-color: #444444;
+    --subtext-color: #777777;
+}
+
+* {
+    box-sizing: border-box;
+    border: 0;
+    margin:0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #111111;
+    min-height: 100vh;
+    display: grid;
+    grid-template: 80px 1fr 62px / 20% 60% 20%;
+    grid-template-areas:
+        "header header header"
+        ". main ."
+        "footer footer footer"
+    ;
+}
+
+header {
+    grid-area: header;
+    padding-top: 32px;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.links .image {
+    margin-right: 50px;
+    margin-left: 0;
+}
+
+.links a{
+    text-decoration: none;
+    color: #111111;
+}
+
+.links a + a {
+    margin-left: 30px;
+}
+
+.links .active {
+    font-weight: bold;
+}
+
+/*===FILTERS===*/
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    gap: 8px;
+}
+
+header .filters input {
+    border: 1px solid #EEE;
+    padding: 6px 8px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+header .filters input:hover,
+header .filters input:focus {
+    border: 1px solid var(--button-color);
+}
+
+#wrapper {
+    grid-area: main;
+}
+
+.container-info {
+    background-color: #FBDFDB;
+    border-radius: 30px;
+    height: 366px;
+    position: relative;
+    margin: 36px auto;
+}
+
+.container-info-nf {
+    background-color: #FBDFDB;
+    border-radius: 30px;
+    height: 366px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container-info-nf  h1{
+    padding-top: 140px;
+}
+
+.container-info img {
+    position: absolute;
+    bottom: 0px;
+    right: 80px;
+}
+
+.container-info h1 {
+    position: absolute;
+    left: 50px;
+    top: 120px;
+    font-size: 32px;
+    line-height: 38px;
+}
+
+.container-info p {
+    font-size: 18px;
+    line-height: 28px;
+    opacity: 0.7;
+    color: #000000;
+    position: absolute;
+    left: 50px;
+    top: 170px;
+    text-align: left;
+    width: 316px;
+}
+
+.container-dishes h1 {
+    font-size: 24px;
+    text-align: left;
+}
+
+.dishes {
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 30px;
+    text-align: left;
+}
+
+.dishes img {
+    width: 100%;
+    height: 140px;
+    border-radius: 15px;
+}
+
+.dishes h1 {
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 8px; 
+}
+
+.dishes h2 {
+    font-size: 14px;
+    color: var(--subtext-color);
+}
+
+.dish {
+    text-align: left;
+}
+
+.dish h1 {
+    text-align: left;
+    font-weight: normal;
+}
+
+.dish h2 {
+    text-align: left;
+    font-weight: normal;
+}
+
+
+/*===ABOUT===*/
+
+.container-article {
+    margin-top: 24px;
+}
+
+.container-article h1 {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.container-article h2 {
+    font-size: 20px;
+}
+
+.container-article p {
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--text-secondary-color);
+    margin: 20px 0;
+}
+
+/*=== FOOTER ===*/
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEEEEE;
+}
+
+.footer p {
+    font-size: 14px;
+    color:  #999999;
+    text-align: center;
+}
+
+/*===MATERIALICON===*/
+
+.material-icons.md-dark.md-inactive {
+     color: rgba(0, 0, 0, 0.26);
+     cursor: pointer;
+}
+
+/*===RECIPE-DETAIL===*/
+
+.dish.details {
+    margin: 50px 0;
+}
+
+.dish.details img {
+    border-radius: 15px;
+    width: 100%;
+}
+
+.dish.details h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 50px;
+    margin-bottom: 4px;
+}
+
+.dish.details h2 {
+    text-align: center;
+    color: var(--subtext-color);
+    font-size: 20px;
+}
+
+.container-article.index h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container-article.index ul {
+    margin-bottom: 39px;
+    padding-inline-start: 0;
+}
+
+.container-article.index li {
+    list-style-position: inside;
+    font-size: 18px;
+    color: var(--text-secondary-color);
+    line-height: 28px;
+}
+
+.container-article.index i {
+    padding: 0 10px;
+}
+
+.content-ingredients.active, .content-preps.active, .content-infos.active {
+    display: none;
+}
+
+/*===ADMIN===*/
+
+/*===ADMIN RECIPES===*/
+
+header.admin {
+    background-color: #111111;
+    height: 80px;
+    width: 100%;
+}
+
+.links.admin {
+    display: flex;
+    align-items: center;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.links.admin .image{
+    margin-right: 20px;
+}
+
+.links.admin a {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #999999;
+    font-size: 15px;
+}
+
+.links.admin a.active {
+    color: white;
+}
+
+.links.admin a + a {
+    margin: 0 0 0 30px;
+}
+
+.container-dishes.admin,
+.container-chefs.admin {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.dishes.admin {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 30px;
+    margin-top: 30px;
+}
+
+.dishes.admin img,
+.chefs.admin img {
+    width: 172px;
+    height: 80px;
+    float: left;
+    margin-right: 20px;
+}
+
+.dishes.admin h1,
+.chefs.admin h1 {
+    padding: 0 0 5px 0;
+    line-height: 21px;
+}
+
+.dishes.admin a.button,
+.chefs.admin a.button {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--button-color);
+    font-weight: bold;
+}
+
+/*===ADMIN DETAILS===*/
+
+.recipe-header,
+.chef-header {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recipe-header button[type="submit"],
+.recipe-header a,
+.chef-header button[type="submit"],
+.chef-header a,
+header .filters button[type="submit"] {
+    font-size: 14px;
+    padding: 9px 20px;
+    background: var(--button-color);
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.dish.details.admin,
+.chef.details.admin {
+    margin-top: 20px;
+}
+
+/*===ADMIN EDIT===*/
+
+.recipe-header div button[form="form-delete"],
+.chef-header div button[form="form-delete"] {
+    background-color: #DC4747;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.details {
+    margin-top: 26px;
+}
+
+.details .item {
+    margin: 24px 0;
+}
+
+.details .item div:nth-child(1) {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.details .item div:nth-child(2) {
+    font-size: 16px;
+}
+
+input, textarea, select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px 20px;
+    margin: 4px 0;
+    outline: none;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+button {
+    outline: none;
+}
+
+select {
+    background-color: white;
+}
+
+.details .item textarea {
+    height: 257px;
+    line-height: 24px;
+    resize: none;
+    font-family: 'Roboto', sans-serif;
+    color: #111111;
+}
+
+.details .item button[type="button"] {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--button-color);
+    cursor: pointer;
+}
+
+/*=== CHEF INDEX ===*/
+
+.chefs.admin,
+.chefs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    margin-top: 30px;
+    row-gap: 30px;
+}
+
+.chefs.admin .chef,
+.chefs .chef {
+    display: flex;
+    align-items: center;
+}
+
+.chefs.admin .container-image span,
+.chefs .container-image span {
+    display: inline-block;
+    margin-right: 20px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+.chefs.admin div:last-child,
+.chefs div:last-child {
+    font-size: 18px;
+}
+
+.chefs .chef div:nth-child(2) div:last-child {
+    font-size: 14px;
+    color: var(--subtext-color);
+}
+
+/*=== CHEF SHOW ===*/
+
+.chef-details {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.chef-details span {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    background-position: center;
+    background-size: cover;
+}
+
+.chef-details h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.chef-details h2 {
+    font-size: 20px;
+    font-weight: normal;
+    color: var(--subtext-color);
+}

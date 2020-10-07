@@ -1,0 +1,27 @@
+{% extends "admin/layout.njk" %}
+
+{% block head %}
+    <title>Foodfy - Novo chefe</title>
+{% endblock head %}
+
+{% block links %}
+<a href="/admin/recipes">Receitas</a>
+<a class="active" href="/admin/chefs">Chefs</a>
+{% endblock links %}
+
+{% block content %}
+<div id="wrapper">
+    <form id="form-save" action="/admin/chefs" method="post">
+        <div class="chef-header">
+            <h2>Criando chefe</h2>
+            <div>
+                <button form="form-save" type="submit">Salvar chef</button>
+            </div>
+        </div>
+
+        {% include "admin/chefs/fields.njk" %}
+        
+    </form>
+</div>
+
+{% endblock content %}
