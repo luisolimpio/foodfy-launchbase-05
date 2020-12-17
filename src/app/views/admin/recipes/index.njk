@@ -1,9 +1,4 @@
-{% extends "admin/layout.njk" %}
-
-{% block links %}
-<a class="active" href="/admin/recipes">Receitas</a>
-<a href="/admin/chefs">Chefs</a>
-{% endblock links %}
+{% extends "layouts/admin.njk" %}
 
 {% block content %}
         
@@ -31,7 +26,3 @@
 </div>
 
 {% endblock content %}
-
-{% block scripts %}
-<script src="scripts.js"></script>
-{% endblock scripts %}

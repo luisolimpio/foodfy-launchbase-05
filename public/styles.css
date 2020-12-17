@@ -13,8 +13,6 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    color: #111111;
     min-height: 100vh;
     display: grid;
     grid-template: 80px 1fr 62px / 20% 60% 20%;
@@ -23,6 +21,10 @@ body {
         ". main ."
         "footer footer footer"
     ;
+}
+
+body, input, textarea, select {
+    font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -279,7 +281,7 @@ header .filters input:focus {
 
 /*===ADMIN RECIPES===*/
 
-header.admin {
+ header.admin {
     background-color: #111111;
     height: 80px;
     width: 100%;
@@ -305,10 +307,6 @@ header.admin {
 
 .links.admin a.active {
     color: white;
-}
-
-.links.admin a + a {
-    margin: 0 0 0 30px;
 }
 
 .container-dishes.admin,
@@ -413,6 +411,28 @@ input, textarea, select {
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     font-size: 18px;
+}
+
+#ingredients .ingredient,
+#preparations .preparation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item #delete-field {
+    color: var(--subtext-color);
+    margin-left: 10px;
+}
+
+.item #delete-field:hover {
+    cursor: pointer;
+    color: var(--button-color);
+}
+
+input:hover, textarea:hover, select:hover,
+input:focus, textarea:focus, select:focus {
+    border: 1px solid var(--button-color);
 }
 
 button {

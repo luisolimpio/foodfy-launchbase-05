@@ -7,34 +7,6 @@ module.exports = {
         })
     },
 
-    siteHomeIndex(req, res) {
-        const { filter } = req.query
-        
-        if(filter) {
-            Recipe.findBy(filter, function(recipes) {
-                return res.render("site/searchRecipe", { recipes, filter })
-            })
-        } else {
-            Recipe.topRecipes(function (recipes) {
-                return res.render("site/index", { recipes })
-            })
-        }
-    },
-
-    siteRecipesIndex(req, res) {
-        Recipe.all(function (recipes) {
-            return res.render("site/recipe", { recipes })
-        })
-    },
-
-    findBy(req, res) {
-        const filter = req.query
-
-        Recipe.findBy(filter, function(recipes) {
-            return res.render
-        })
-    },
-
     create(req, res) {
         Recipe.chefSelectOptions(function (options) {
             return res.render("admin/recipes/create", { chefOptions: options })

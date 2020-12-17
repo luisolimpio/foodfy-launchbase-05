@@ -1,4 +1,4 @@
-{% extends "site/layout.njk" %}
+{% extends "layouts/public.njk" %}
 
 {% block head %}
     <title>Foodfy - {{recipe.title}}</title>
@@ -6,22 +6,12 @@
       rel="stylesheet">
 {% endblock head %}
 
-{% block header %}
-<div class="header">
-    <div class="links">
-        <a class="image" href="/"><img src="/assets/logoBlack.png" alt="Foodfy Logo"></a>
-        <a href="/about">Sobre</a>
-        <a class="active" href="/recipes">Receitas</a>
-        <a href="/chefs">Chefs</a>
-    </div>
-{% endblock header %}
-
 {% block content %}
 <div class="container-recipe">
     <div class="dish details">
-        <img src="{{recipe.image_url}}" alt="Imagem de {{recipe.title}}">
+        <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
         <h1>{{recipe.title}}</h1>
-        <h2>Por {{recipe.author}}</h2>
+        <h2>Por {{recipe.chef_name}}</h2>
     </div> 
     <div class="container-article index">
         <div class="container-article recipe">   
@@ -40,8 +30,8 @@
             </h2>
         </div>
         <div class="content-preps">
-            {% for step in recipe.preparation %}
-            <p>{{step}}</p>
+            {% for preparation in recipe.preparation %}
+            <p>{{preparation}}</p>
             {% endfor %}
         </div>
         <div class="container-article recipe">

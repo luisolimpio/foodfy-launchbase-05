@@ -1,46 +1,38 @@
-{% extends "admin/layout.njk" %}
+{% extends "layouts/admin.njk" %}
 
 {% block head %}
     <title>Foodfy - {{chef.name}}</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
 {% endblock head %}
 
-{% block links %}
-<a href="/admin/recipes">Receitas</a>
-<a class="active" href="/admin/chefs">Chefs</a>
-{% endblock links %}
-
 {% block content %}
-<div id="wrapper">
-    <div class="container-chef">
-        <div class="chef-header">
-            <h2>Chef: {{ chef.name }}</h2>
-            <a href="/admin/chefs/{{ chef.id }}/edit">Editar chef</a>
-        </div>
+<div class="container-chef">
+    <div class="chef-header">
+        <h2>Chef: {{ chef.name }}</h2>
+        <a href="/admin/chefs/{{ chef.id }}/edit">Editar chef</a>
+    </div>
 
-        <div class="chef-details">
-            <span style="background-image: url({{ chef.avatar_url }})"></span>
-            <h1>{{ chef.name }}</h1>
-            <h2>{{ chef.total_recipes }} receitas</h2>
-        </div>
+    <div class="chef-details">
+        <span style="background-image: url({{ chef.avatar_url }})"></span>
+        <h1>{{ chef.name }}</h1>
+        <h2>{{ chef.total_recipes }} receitas</h2>
+    </div>
 
-        <div class="container-dishes admin">
-            <div class="dishes-index">
-                <h2>Receitas</h2>
-                <section class="dishes admin">
-                    {% for recipe in recipes %}
-                    <div id="{{recipe.id}}"class="dish">
-                        <div class="container-image">
-                            <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
-                        </div>
-                        <h1>{{ recipe.title }}</h1>
-                        <h2>{{ chef.name }}</h2>
-                        <a class="button" href="/admin/recipes/{{ recipe.id }}">Visualizar</a>
+    <div class="container-dishes admin">
+        <div class="dishes-index">
+            <h2>Receitas</h2>
+            <section class="dishes admin">
+                {% for recipe in recipes %}
+                <div id="{{recipe.id}}"class="dish">
+                    <div class="container-image">
+                        <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
                     </div>
-                    {% endfor %}
-                </section>
-            </div>
+                    <h1>{{ recipe.title }}</h1>
+                    <h2>{{ chef.name }}</h2>
+                    <a class="button" href="/admin/recipes/{{ recipe.id }}">Visualizar</a>
+                </div>
+                {% endfor %}
+            </section>
+        </div>
     </div>
 </div>
 

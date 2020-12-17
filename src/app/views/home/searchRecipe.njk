@@ -1,4 +1,4 @@
-{% extends "site/layout.njk" %}
+{% extends "layouts/public.njk" %}
 
 {% block head %}
     <title>Foodfy - Buscando receitas</title>
@@ -32,16 +32,20 @@
 
 <div class="container-dishes">
     <section class="dishes">
-
-        {% for recipe in recipes %}
-        <div id="{{recipe.id}}" class="dish">
-            <div class="container-image">
-                <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+        {% if recipes.length > 0 %}
+            {% for recipe in recipes %}
+            <div id="{{recipe.id}}" class="dish">
+                <div class="container-image">
+                    <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                </div>
+                <h1>{{recipe.title}}</h1>
+                <h2>por {{recipe.chef_name}}</h2>
             </div>
-            <h1>{{recipe.title}}</h1>
-            <h2>por {{recipe.chef_name}}</h2>
-        </div>
-        {% endfor %}
+            {% endfor %}
+        
+        {% else %}
+            <h3>Nenhuma receita encontrada!</h3>
+        {% endif %}
 
     </section>
 </div>

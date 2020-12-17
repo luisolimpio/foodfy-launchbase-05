@@ -7,13 +7,15 @@ for(let item of menuItems){
     }
 }
 
-// const dishes = document.querySelectorAll('.dish')
+const dishes = document.querySelectorAll('.dish')
 
-// if(dishes) {
-//     for(let dish of dishes) {
-//         dish.addEventListener("click", function() {
-//         dish_id = dish.getAttribute("id")
-//         window.location.href = `/recipe/${dish_id}`
-//         })
-//     }
-// }
+if(dishes) {
+    for(let dish of dishes) {
+        dish.style.cursor = "pointer"
+        dish.addEventListener("click", function() {
+        dishId = dish.getAttribute("id")
+        console.log(dishId)
+        window.location.href = `/recipe/${dishId}`
+        })
+    }
+}

@@ -1,13 +1,8 @@
-{% extends "admin/layout.njk" %}
+{% extends "layouts/admin.njk" %}
 
 {% block head %}
     <title>Foodfy - Editar {{recipe.title}}</title>
 {% endblock head %}
-
-{% block links %}
-<a class="active" href="/admin/recipes">Receitas</a>
-<a href="/admin/chefs">Chefs</a>
-{% endblock links %}
 
 {% block content %}
 <div id="wrapper">
@@ -30,6 +25,6 @@
     </form>
 </div>
 
-{% include "fieldMaker.njk" %}
+{% include "fieldManager.njk" %}
 
 {% endblock content %}

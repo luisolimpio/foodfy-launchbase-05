@@ -1,4 +1,5 @@
 require("dotenv/config")
+const path = require('path')
 const express = require('express')
 const nunjucks = require('nunjucks')
 const methodOverride = require('method-override')
@@ -10,7 +11,7 @@ const server = express()
 server.use(express.urlencoded({
     extended: true
 }))
-server.use(express.static('public'))
+server.use(express.static(path.join(__dirname, '..', 'public')))
 server.use(methodOverride('_method'))
 server.use(routes)
 

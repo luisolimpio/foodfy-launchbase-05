@@ -2,16 +2,18 @@ const express = require("express")
 
 const recipes = require("./app/controllers/recipes")
 const chefs = require("./app/controllers/chefs")
+const home = require("./app/controllers/home")
 
 const routes = express.Router()
 
-routes.get("/", recipes.siteHomeIndex)
-routes.get("/searchRecipe", recipes.siteHomeIndex)
+routes.get("/", home.index)
+routes.get("/searchRecipe", home.index)
 routes.get("/about", function(req, res){
-    return res.render("site/about")
+    return res.render("home/about")
 })
-routes.get("/recipes", recipes.siteRecipesIndex)
-routes.get("/chefs", chefs.siteChefsIndex)
+routes.get("/recipes", home.indexRecipes)
+routes.get("/recipe/:id", home.show)
+routes.get("/chefs", home.indexChefs)
 
 routes.get("/admin", function(req, res) {
     return res.redirect("/admin/recipes")
